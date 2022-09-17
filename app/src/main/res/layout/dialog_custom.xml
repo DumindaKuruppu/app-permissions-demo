@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
-    android:layout_gravity="center|start"
+    android:layout_gravity="center"
     android:orientation="vertical">
 
     <TextView
@@ -12,10 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginLeft="10dp"
-        android:text="TextView"
+        android:text="Duminda's custom dialog"
         android:textSize="20dp"
-        android:textStyle="bold"
-        tools:text="Duminda's custom dialog" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView2"
@@ -23,8 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginLeft="10dp"
-        android:text="TextView"
-        tools:text="Duminda's custom dialog" />
+        android:text="Duminda's custom dialog" />
 
     <LinearLayout
         android:layout_width="match_parent"
