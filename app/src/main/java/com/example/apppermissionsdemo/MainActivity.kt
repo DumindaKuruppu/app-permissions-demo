@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
         val btnSnackBar: Button? = findViewById(R.id.btnSnackBar)
         val btnAlertDialog: Button? = findViewById(R.id.btnAlertDialog)
         val btnCustomDialog: Button? = findViewById(R.id.btnCustomDialog)
+        val btnCustomProgress: Button? = findViewById(R.id.btnCustomProgress)
+
 
         btnRequestCameraPermission?.setOnClickListener {
             btnRequestCameraPermission!!.background =
@@ -85,16 +87,32 @@ class MainActivity : AppCompatActivity() {
             alertDialogFunction()
         }
 
-        btnCustomDialog?.setOnClickListener { view ->
+        btnCustomDialog?.setOnClickListener {
             customDialogFunction()
             Toast.makeText(this, "Custom Alert Dialog", Toast.LENGTH_SHORT).show()
         }
 
+        btnCustomProgress?.setOnClickListener {
+            customDialogProgressFunction()
+        }
+
+    }
+
+    private fun customDialogProgressFunction() {
+        val customProgressDialog = Dialog(this)
+        customProgressDialog.setContentView(R.layout.custom_progress_dialog)
+        customProgressDialog.show()
     }
 
     private fun customDialogFunction() {
+        val button: Button? = findViewById(R.id.button)
         val customDialog = Dialog(this)
         customDialog.setContentView(R.layout.dialog_custom)
+        button?.setOnClickListener {
+            Toast.makeText(applicationContext, "How", Toast.LENGTH_SHORT).show()
+            customDialog.dismiss()
+        }
+        customDialog.show()
 
 
     }

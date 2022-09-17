@@ -5,4 +5,6 @@
     <string name="access_camera_permission">Access camera permission</string>
     <string name="displayAlert">DISPLAY ALERT DIALOG</string>
     <string name="displayCustomDialog">Display custom dialog</string>
+    <string name="displayCustomProgress">Display custom progress</string>
+    <string name="pleaseWait">Please wait</string>
 </resources>
