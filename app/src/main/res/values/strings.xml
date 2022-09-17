@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">App Permissions Demo</string>
     <string name="duminda">DUMINDA</string>
+    <string name="displaySnackBar">Display Snack Bar</string>
+    <string name="access_camera_permission">Access camera permission</string>
+    <string name="displayAlert">DISPLAY ALERT DIALOG</string>
+    <string name="displayCustomDialog">Display custom dialog</string>
 </resources>

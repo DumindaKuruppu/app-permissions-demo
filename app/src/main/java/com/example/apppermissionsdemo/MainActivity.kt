@@ -1,6 +1,7 @@
 package com.example.apppermissionsdemo
 
 import android.Manifest
+import android.app.Dialog
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,9 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.content.res.AppCompatResources
+import com.google.android.material.snackbar.Snackbar
+import java.io.BufferedReader
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,8 +52,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var btnRequestCameraPermission: Button? =
-            findViewById(R.id.btnRequestCameraPermission)
+        val btnRequestCameraPermission: Button? = findViewById(R.id.btnRequestCameraPermission)
+        val btnSnackBar: Button? = findViewById(R.id.btnSnackBar)
+        val btnAlertDialog: Button? = findViewById(R.id.btnAlertDialog)
+        val btnCustomDialog: Button? = findViewById(R.id.btnCustomDialog)
 
         btnRequestCameraPermission?.setOnClickListener {
             btnRequestCameraPermission!!.background =
@@ -69,6 +75,49 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        btnSnackBar?.setOnClickListener { view ->
+            Toast.makeText(this, "TOAST", Toast.LENGTH_SHORT).show()
+            Snackbar.make(view, "You have done", Snackbar.LENGTH_SHORT).show()
+
+        }
+
+        btnAlertDialog?.setOnClickListener {
+            alertDialogFunction()
+        }
+
+        btnCustomDialog?.setOnClickListener { view ->
+            customDialogFunction()
+            Toast.makeText(this, "Custom Alert Dialog", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    private fun customDialogFunction() {
+        val customDialog = Dialog(this)
+        customDialog.setContentView(R.layout.dialog_custom)
+
+
+    }
+
+    private fun alertDialogFunction() {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Alert")
+        builder.setMessage("This is alert dialog. Which is used to show alert")
+        builder.setIcon(android.R.drawable.ic_dialog_alert)
+        builder.setPositiveButton("Yes") { dialogInterface, which ->
+            Toast.makeText(applicationContext, "clicked yes", Toast.LENGTH_SHORT).show()
+            dialogInterface.dismiss()
+        }
+
+        builder.setNeutralButton("Cancel") { dialogInterface, which ->
+            Toast.makeText(applicationContext, "Operation cancelled !", Toast.LENGTH_SHORT).show()
+            dialogInterface.dismiss()
+        }
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
     private fun showRationalDialog(

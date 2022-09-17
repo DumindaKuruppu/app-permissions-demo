@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Users/kurup/AndroidStudioProjects/AppPermissionsDemo/app/src/main/res/drawable/button_background.xml" value="0.239" />
         <entry key="..\:/Users/kurup/AndroidStudioProjects/AppPermissionsDemo/app/src/main/res/drawable/button_background_clicked.xml" value="0.153" />
-        <entry key="..\:/Users/kurup/AndroidStudioProjects/AppPermissionsDemo/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/kurup/AndroidStudioProjects/AppPermissionsDemo/app/src/main/res/layout/activity_main.xml" value="0.8" />
+        <entry key="..\:/Users/kurup/AndroidStudioProjects/AppPermissionsDemo/app/src/main/res/layout/dialog_custom.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
